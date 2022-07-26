@@ -4,45 +4,54 @@
 				console.log(titulo.textContent);
 titulo.textContent = "Aparecida Nutricionista";
 
-var paciente = document.querySelector("#primeiro-paciente");
+var pacientes = document.querySelectorAll(".paciente");
 
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
+for(var i =0;i<pacientes.length;i++){
+	console.log(pacientes[i].textContent);
 
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
+	var paciente = pacientes[i];
 
-				
-//console.log(paciente);
-//console.log(tdPeso);
-//console.log(peso);
-//console.log(altura);
+	var tdPeso = paciente.querySelector(".info-peso");
+	var peso = tdPeso.textContent;
 
-tdImc = paciente.querySelector(".info-imc");
+	var tdAltura = paciente.querySelector(".info-altura");
+	var altura = tdAltura.textContent;
 
-var pesoEhValido = true;
+	tdImc = paciente.querySelector(".info-imc");
 
-var alturaEhValida = true;
+	var pesoEhValido = true;
 
-if (peso < 0 || peso > 100) {
-	console.log("Peso invalido");
-	pesoEhValido = false;
-	tdImc.textContent = ("Peso Invalido");
-}
+	var alturaEhValida = true;
 
-if (altura < 0 || altura > 3,00) {
-	console.log("Altura invalida");
-	alturaEhValida = false;
-	tdImc = ("Altura invalida");
-}
-
-	if (pesoEhValido && alturaEhValida) {
-		var imc = peso / (altura * altura);
-		tdImc.textContent = imc;
+	if (peso <= 0 || peso >= 300) {
+		console.log("Peso invalido");
+		pesoEhValido = false;
+		tdImc.textContent = ("Peso Invalido");
+		paciente.classList.add("paciente-invalido")
 
 	}
 
-//https://cursos.alura.com.br/course/javascript-programando-na-linguagem-web/task/24668
-//verificar pq o calculo de altura não está correto.
+
+	if (altura <= 0 || altura>=3.00) {
+		console.log("Altura Invalida")
+		alturaEhValida=false;
+		tdImc.textContent = ('Altura Invalido');
+		paciente.classList.add("paciente-invalido")
+		
+	}
+
+
+		if(pesoEhValido && alturaEhValida ) {
+			var imc = peso / (altura * altura);
+			tdImc.textContent = imc.toFixed(2);
+		}
+}
+
+
+
+
+	
+
+
 
 
