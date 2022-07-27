@@ -47,13 +47,26 @@ for(var i =0;i<pacientes.length;i++){
 		}
 
 		var botaoAdicionar = document.querySelector("#adicionar-paciente");
-		botaoAdicionar.addEventListener("click",mostraMensagem);
+	botaoAdicionar.addEventListener("click", function (event) {
+		event.preventDefault();
+		
+		var form = document.querySelector("#form-adiciona");
+		var nome = form.nome.value;
+		var peso = form.peso.value;
+		var altura = form.altura.value;
+		var gordura = form.gordura.value;
 
-		 function mostraMensagem(){
-			console.log("olá eu fui clicado!");
-		 };
+		console.log(nome);
+		console.log(peso);
+		console.log(altura
+		);
+		console.log(gordura);
 
 
+    });
+
+	//https://cursos.alura.com.br/course/javascript-programando-na-linguagem-web/task/24209
+	// parei no tempo de 6min.
 }
 
 
