@@ -7,7 +7,7 @@ titulo.textContent = "Aparecida Nutricionista";
 var pacientes = document.querySelectorAll(".paciente");
 
 for(var i =0;i<pacientes.length;i++){
-	console.log(pacientes[i].textContent);
+	//console.log(pacientes[i].textContent);
 
 	var paciente = pacientes[i];
 
@@ -45,6 +45,15 @@ for(var i =0;i<pacientes.length;i++){
 			var imc = peso / (altura * altura);
 			tdImc.textContent = imc.toFixed(2);
 		}
+
+		var botaoAdicionar = document.querySelector("#adicionar-paciente");
+		botaoAdicionar.addEventListener("click",mostraMensagem);
+
+		 function mostraMensagem(){
+			console.log("olá eu fui clicado!");
+		 };
+
+
 }
 
 
