@@ -10,7 +10,12 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 	
         //cria a tr e a td do paciente.
 		var pacienteTr = montaTr(paciente);
-		
+
+		if (!validaPaciente(paciente)) {
+			alert("Paciente Inválido!!!")
+			return;
+        }
+				
 		var tabela = document.querySelector("#tabela-pacientes")
 
 
@@ -53,5 +58,16 @@ function montaTd(dado, classe) {
 	td.classList.add(classe);
 
 	return td;
+
+}
+
+function validaPaciente(paciente) {
+
+	if (validaPeso(paciente.peso)) {
+		return true;
+	} else {
+		return false;
+
+    }
 
 }
