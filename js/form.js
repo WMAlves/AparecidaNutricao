@@ -73,7 +73,7 @@ function validaPaciente(paciente) {
 	var erros = [];
 
 	if (!validaPeso(paciente.peso)) {
-		 erros.push("Pelos é invalido!");
+		 erros.push("Pesos é invalido!");
 	} 
 
 	if (!validaAltura(paciente.altura)) {
