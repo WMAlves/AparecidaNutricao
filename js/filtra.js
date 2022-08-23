@@ -10,7 +10,9 @@ campoFiltro.addEventListener("input", function () {
             var paciente = pacientes[i];
             var tdNome = paciente.querySelector(".info-nome");
             var nome = tdNome.textContent;
-            if (nome != this.value) {
+            var expressao = new RegExp(this.value,"i");
+
+            if (!expressao.test(nome)) {
                 paciente.classList.add("invisivel");
             } else {
                 paciente.classList.remove("invisivel");
@@ -24,8 +26,9 @@ campoFiltro.addEventListener("input", function () {
 
         }
     }
-    
-        //https://cursos.alura.com.br/course/javascript-programando-na-linguagem-web/task/24465
-    //esconder os demais pacientes.
+
+
+
+     
 
 });
