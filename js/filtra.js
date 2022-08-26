@@ -27,6 +27,9 @@ campoFiltro.addEventListener("input", function () {
         }
     }
 
+    //https://cursos.alura.com.br/course/javascript-programando-na-linguagem-web/task/23672
+    //leia o texto pois ensina um pouco mais sobr expressão regular
+
 
 
      

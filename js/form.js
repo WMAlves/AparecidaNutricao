@@ -5,33 +5,37 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 		var form = document.querySelector("#form-adiciona");
         //Extraindo informações dos paicentes do form
         var paciente = obtemPacienteDoFormulario(form);
-        
-		console.log(paciente);
-	
-        //cria a tr e a td do paciente.
-		var pacienteTr = montaTr(paciente);
-
 
 		//>>>>TRECHO QUE VALIDA PACIENTE<<<<
 
 		var erros = validaPaciente(paciente);
-			
-
+	
 		if (erros.length > 0) {
 			exibeMensagensDeErros(erros);
 			return;
         }
 				
-		var tabela = document.querySelector("#tabela-pacientes");
+		
+		adicionaPacienteNaTabela(paciente);
 
 
-        //adicionando paciente na tablela
-		tabela.appendChild(pacienteTr);
 
 		form.reset();
 		var mensagensErro = document.querySelector("#mensagens-erro");
 		ul.innerHTML = "";
-    });
+	});
+
+
+function adicionaPacienteNaTabela(paciente) {
+
+	//cria a tr e a td do paciente.
+	var pacienteTr = montaTr(paciente);
+	var tabela = document.querySelector("#tabela-pacientes");
+	//adicionando paciente na tablela
+	tabela.appendChild(pacienteTr);
+
+
+}
 
 
 function exibeMensagensDeErros(erros){
